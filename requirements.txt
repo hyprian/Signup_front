@@ -1,0 +1,5 @@
+# signup-bot-frontend/requirements.txt
+streamlit
+requests
+pandas
+pyyaml>=5.4 
