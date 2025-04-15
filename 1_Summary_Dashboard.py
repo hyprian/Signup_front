@@ -2,7 +2,7 @@
 
 import streamlit as st
 import pandas as pd
-import requests             # <<<--- ADDED IMPORT --- >>>
+import requests             
 import logging
 from datetime import datetime
 import traceback
