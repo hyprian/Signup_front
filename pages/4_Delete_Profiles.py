@@ -66,7 +66,7 @@ def fetch_main_settings_from_api():
         settings_data = response.json(); logging.info("Main settings fetched."); return settings_data, None
     except json.JSONDecodeError: logging.error("API Main Settings Fetch Error: Invalid JSON"); return None, "Invalid JSON response."
     except requests.exceptions.RequestException as e:
-        error_detail = f"{type(e).__name__}";
+        error_detail = f"{type(e).__name__}"
         if e.response is not None: 
             try: error_detail += f" ({e.response.status_code}): {e.response.json().get('error', e.response.text)}"
             except: pass
@@ -82,7 +82,7 @@ def save_main_settings_via_api(settings_data):
         return True, message
     except json.JSONDecodeError: logging.error("API Main Settings Save Error: Invalid JSON response"); return False, "Invalid JSON response after save."
     except requests.exceptions.RequestException as e:
-        error_detail = f"{type(e).__name__}";
+        error_detail = f"{type(e).__name__}"
         if e.response is not None: 
             try: error_detail += f" ({e.response.status_code}): {e.response.json().get('error', e.response.text)}"
             except: pass
